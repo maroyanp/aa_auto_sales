@@ -4,6 +4,43 @@
 {% block title %}Home | A & A Auto Sales{% endblock %}
 
 {% block content %}
-    <h1>Welcome to A & A Auto Sales</h1>
-    <p>We offer quality vehicles at unbeatable prices.</p>
+    <!-- <h1>Welcome to A & A Auto Sales</h1>
+    <p>We offer quality vehicles at unbeatable prices.</p> -->
+
+    <!-- covers intro to website kinda like hero section -->
+    <section class="video-hero">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="{{ url_for('static', filename='videos/cardealership_short.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-text">
+            <h1>Welcome to A & A Auto Sales</h1>
+            <p>Finding the best auto deals in Kitchener, Waterloo and Cambridge</p>
+        </div>
+    </section>
+    <div class="spacer"></div>
+    <section class="quick-links">
+        <a href="{{ url_for('inventory') }}" class="quick-link">
+            <img src="{{ url_for('static', filename='images/index_inventory_pic.jpg') }}" alt="Inventory">
+            <p>Come check out our Inventory</p>
+        </a>
+        <a href="{{ url_for('contact') }}" class="quick-link">
+            <img src="{{ url_for('static', filename='images/contact.png') }}" alt="Contact">
+            <p>Get in touch with us</p>
+        </a>
+        <a href="#about" class="quick-link">
+            <img src="{{ url_for('static', filename='images/about.png') }}" alt="About">
+            <p>Learn More About Us</p>
+        </a>
+    </section>
+
+    <!-- About us content -->
+    <section id="about">
+        <h1>About Us</h1>
+        <p>At A & A Auto Sales, we are committed to providing our customers with exceptional service and quality vehicles. Our experienced team is here to help you find the perfect car that fits your needs and budget. We pride ourselves on our transparent pricing and hassle-free buying process. Visit us today and experience the A & A Auto Sales difference!</p>
+    </section>
+
+
+
+
 {% endblock %}
