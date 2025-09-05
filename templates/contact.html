@@ -4,6 +4,59 @@
 {% block title %}Contact | A & A Auto Sales{% endblock %}
 
 {% block content %}
-    <h1>Welcome to A & A Auto Sales</h1>
-    <p>We offer quality vehicles at unbeatable prices.</p>
+<div class="contact-container">
+    <section class="contact-intro">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or would like to schedule a test drive, please don't hesitate to reach out to us. You can contact us via phone, email, or by filling out the contact form below.</p>
+
+        <h2>Contact Information</h2>
+        <ul class="contact-info">
+            <li><strong>Phone:</strong> (123) 456-7890</li>
+            <li><strong>Email:</strong> someone@email.com</li>
+            <li><strong>Address:</strong> 123 Main St, Kitchener, ON</li>
+            <li><strong>Business Hours:</strong> Mon-Fri: 9am - 6pm,</li> 
+            <li>Sat 10am - 4pm, Sun: <strong>Closed</strong></li>
+        </ul>
+    </section>
+
+    <section class="contact-form">
+        <h2>Contact Form</h2>
+        <form action="{{ url_for('contact') }}" method="post">
+            {{ forum.hidden_tag() }}
+            <div class="form-group">
+                {{ forum.name.label }}<br>
+                {{ forum.name(size=32) }}<br>
+                {% for error in forum.name.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ forum.phone.label }}<br>
+                {{ forum.phone(size=32) }}<br>
+                {% for error in forum.phone.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ forum.email.label }}<br>
+                {{ forum.email(size=32) }}<br>
+                {% for error in forum.email.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ forum.message.label }}<br>
+                {{ forum.message(rows=4, cols=32) }}<br>
+                {% for error in forum.message.errors %}
+                    <span class="error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ forum.submit() }}
+            </div>
+        </form>
+    </section>
+</div>
+
+
 {% endblock %}

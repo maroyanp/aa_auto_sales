@@ -4,6 +4,7 @@
 {% block title %}Home | A & A Auto Sales{% endblock %}
 
 {% block content %}
+    <script src="{{ url_for('static', filename='scripts/carousel.js') }}" defer></script>
     <!-- <h1>Welcome to A & A Auto Sales</h1>
     <p>We offer quality vehicles at unbeatable prices.</p> -->
 
@@ -19,7 +20,68 @@
         </div>
     </section>
     <div class="spacer"></div>
-    <section class="quick-links">
+    <!-- About us content -->
+    <section id="about">
+    <div class="about_us">
+        
+        <div class="about-image">
+            <figure>
+                <img src="{{ url_for('static', filename='images/sargon.jpeg') }}" alt="About A & A Auto Sales">
+                <figcaption>Our Operator and Owner. SARGONI</figcaption>
+            </figure>
+        </div>
+        <div class="about-text">
+            <h1>About Us</h1>
+            
+            <ul>
+                <li>At A & A Auto Sales, we are dedicated to providing our customers with high-quality vehicles at unbeatable prices. Our team of experienced professionals is committed to helping you find the perfect car that fits your needs and budget.</li>
+                <li>Whether you're looking for a reliable sedan, a spacious SUV, or a sporty coupe, we have a wide selection of vehicles to choose from. Visit us today and experience the A & A Auto Sales difference!</li>
+                <li>We are located in Kitchener, Ontario, and proudly serve the surrounding areas of Waterloo and Cambridge. Our convenient location makes it easy for you to stop by and check out our inventory.</li>
+                <li>Customer satisfaction is our top priority. We strive to make your car-buying experience as smooth and enjoyable as possible. Our friendly staff is here to answer any questions you may have and assist you throughout the entire process.</li>
+                <li>In addition to our extensive inventory of vehicles, we also offer financing options to help make your purchase more affordable. Our finance team works with a variety of lenders to find the best rates and terms for our customers.</li>
+            </ul>
+            </div>
+    </div>
+    </section>
+
+    <!-- Inventory showRoom -->
+    <section class="inventory-carousel">
+        <h2>Check Out Our Inventory</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev">&#10094;</button>
+
+            <div class="carousel-track">
+            <a href="{{ url_for('inventory') }}">
+                <img src="{{ url_for('static', filename='images/car1.jpg') }}" alt="Car 1">
+            </a>
+            <a href="{{ url_for('inventory') }}">
+                <img src="{{ url_for('static', filename='images/car2.jpg') }}" alt="Car 2">
+            </a>
+            <a href="{{ url_for('inventory') }}">
+                <img src="{{ url_for('static', filename='images/car3.jpg') }}" alt="Car 3">
+            </a>
+            <a href="{{ url_for('inventory') }}">
+                <img src="{{ url_for('static', filename='images/car4.jpg') }}" alt="Car 4">
+            </a>
+            <a href="{{ url_for('inventory') }}">
+                <img src="{{ url_for('static', filename='images/car5.jpg') }}" alt="Car 5">
+            </a>
+            <!-- Add more as needed -->
+            </div>
+
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </section>
+
+    <div> 
+        <button class="inventory-button" onclick="location.href='{{ url_for('inventory') }}'">View Full Inventory</button>
+    </div>
+
+    
+    <!-- ######################################## -->
+    <!-- FIXMEEE::  Needs to flow better right now just not looking the best-->
+     <!-- ######################################## -->
+    <!-- <section class="quick-links">
         <a href="{{ url_for('inventory') }}" class="quick-link">
             <img src="{{ url_for('static', filename='images/index_inventory_pic.jpg') }}" alt="Inventory">
             <p>Come check out our Inventory</p>
@@ -32,15 +94,6 @@
             <img src="{{ url_for('static', filename='images/about.png') }}" alt="About">
             <p>Learn More About Us</p>
         </a>
-    </section>
-
-    <!-- About us content -->
-    <section id="about">
-        <h1>About Us</h1>
-        <p>At A & A Auto Sales, we are committed to providing our customers with exceptional service and quality vehicles. Our experienced team is here to help you find the perfect car that fits your needs and budget. We pride ourselves on our transparent pricing and hassle-free buying process. Visit us today and experience the A & A Auto Sales difference!</p>
-    </section>
-
-
-
+    </section> -->
 
 {% endblock %}
