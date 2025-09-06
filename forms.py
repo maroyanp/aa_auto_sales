@@ -19,13 +19,14 @@ class VehicleForm(FlaskForm):
     model = StringField('Model', validators=[DataRequired()])
     year = StringField('Year', validators=[DataRequired()])
     price = StringField('Price', validators=[DataRequired()])
-    
+    kilometers = StringField('Kilometers', validators=[DataRequired()])
     image = FileField('Vehicle Image', validators=[
         FileRequired(),
         FileAllowed(['jpg', 'jpeg', 'png', 'gif'], 'Images only!')
     ])
     
     submit = SubmitField('Add Vehicle')
+
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
