@@ -496,3 +496,134 @@ Inventory page styling
     cursor: default;
     transition: all 0.3s ease;
 }
+
+
+/*
+############################
+Style for add inventory
+############################
+*/
+
+/* Admin page intro */
+.admin-intro {
+    max-width: 900px;
+    margin: 2rem auto 3rem;
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #333;
+}
+
+.admin-intro h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: #007BFF;
+}
+
+.admin-intro p {
+    font-size: 1.2rem;
+}
+
+/* Add Car Section */
+.add-car {
+    max-width: 600px;
+    background-color: #fff;
+    margin: 0 auto 4rem;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.add-car h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: #007BFF;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="file"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    background-color: #fff;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+/* Submit Button */
+.form-group input[type="submit"],
+.form-group button {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.85rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 50%;
+    max-width: 200px;
+}
+
+.form-group input[type="submit"]:hover,
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Delete section placeholder */
+.del-car {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 2rem 3rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #333;
+}
+
+.del-car h1 {
+    font-size: 2rem;
+    color: #d9534f;
+}
