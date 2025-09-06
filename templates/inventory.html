@@ -6,4 +6,23 @@
 {% block content %}
     <h1>Welcome to A & A Auto Sales</h1>
     <p>We offer quality vehicles at unbeatable prices.</p>
+
+
+    <section class="inventory-showcase">
+        <h2>Our Inventory</h2>
+        <div class="inventory-grid">
+            {% for car in cars %}
+            <div class="vehicle-card">
+                <img src="{{ url_for('static', filename='uploads/' ~ car.image_filename) }}" 
+                    alt="{{ car.make }} {{ car.model }}" width="300" />
+                <h3>{{ car.year }} {{ car.make }} {{ car.model }}</h3>
+                <p>Price: ${{ "%.2f"|format(car.price) }}</p>
+                <p>Kilometers: {{ car.kilometers }} km</p>
+            </div>
+            {% else %}
+            <p>No vehicles available at the moment. Please check back later.</p>
+            {% endfor %}
+
+
+        </div>
 {% endblock %}
