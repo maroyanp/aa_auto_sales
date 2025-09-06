@@ -19,12 +19,12 @@ class User(UserMixin,db.Model):
 
 class Vehicle(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    make = db.Column(db.String(64), index=True, nullable=False)
-    model = db.Column(db.String(64), index=True, nullable=False)
-    year = db.Column(db.Integer, index=True, nullable=False)
-    price = db.Column(db.Float, index=True, nullable=False)
-    image_filename = db.Column(db.String(128), nullable=False)
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    make = db.Column(db.String(100))
+    model = db.Column(db.String(100))
+    year = db.Column(db.Integer)
+    price = db.Column(db.Float)
+    kilometers = db.Column(db.String(20))
+    image_filename = db.Column(db.String(200))  # store filename instead
 
     def __repr__(self):
         return f'<Vehicle {self.make} {self.model} {self.year} - ${self.price}>'
