@@ -52,6 +52,10 @@ footer {
     margin-top: 3rem;
 }
 
+
+/* ##############
+video hero section
+################*/
 .video-hero {
     position: relative;
     width: 100%;
@@ -92,10 +96,14 @@ footer {
 }
 
 .spacer {
-    height: 20px; /* Adjust height as needed */
+    height: 40px; /* Adjust height as needed */
     /* background-color: rgba(211, 211, 211, 0.4); Optional: for visibility */
 }
 
+
+/* ##############
+quick links section
+################*/
 .quick-links {
     display: flex;
     justify-content: space-between;
@@ -135,29 +143,356 @@ footer {
     color: #007BFF; /* Optional: color change on hover */
 }
 
+/* ##############
+about us section 
+################*/
+
 #about {
     padding: 4rem 2rem;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 3rem auto;
     background-color: #fff; /* White background for contrast */
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-#about .about_us h1 {
-    font-family: Arial, sans-serif;  /* Matches your base font */
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: #1a1a1a;                  /* Dark like your navbar bg */
+#about .about_us {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap; /* for responsiveness */
+    justify-content: center;
+}
+
+#about .about-image {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+#about .about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    height: auto;
+}
+
+#about .about-text {
+    flex: 1 1 400px;
+    max-width: 600px;
+}
+
+.about-text h1 {
+    text-align: left;
     margin-bottom: 1rem;
+    padding-bottom: 20px;
+  
+}
+
+#about .about-text li {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+.about-image figure {
+    margin: 0;
     text-align: center;
 }
 
-#about .about_us p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #333;                    /* Matches your body text color */
-    max-width: 700px;
-    margin: 0 auto;
+.about-image figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+}
+
+
+/* ##############
+Inventory slideshow section
+################*/
+.inventory-carousel {
     text-align: center;
+    padding: 3rem 2rem;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track a {
+    flex: 0 0 33.3333%; /* 3 images per view */
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+
+.carousel-track img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+}
+
+/* 
+#####################
+Contact form section
+#####################
+*/
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 3rem auto;
+    background-color: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #333;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    background-color: #fff;
+}
+
+.contact-form .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.contact-form input[type="submit"],
+.contact-form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover,
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* 
+######################
+Contact form Intro
+######################
+*/
+/* Contact Intro Styling */
+.contact-intro {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #007BFF;
+    text-align: center;
+}
+
+.contact-intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-intro h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-info li {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #555;
+}
+
+.contact-info li strong {
+    color: #1a1a1a;
+}
+
+/* Contact page container with columns */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap; /* allows stacking on small screens */
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+/* Left (info) and right (form) sections */
+.contact-intro,
+.contact-form {
+    flex: 1 1 500px; /* grows and shrinks as needed */
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure both sections have the same height if needed */
+.contact-container > section {
+    box-sizing: border-box;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+/* 
+##########################################
+Inventory page styling
+##########################################
+*/
+/* Inventory Grid */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* spacing between cards */
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.vehicle-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .inventory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .inventory-grid {
+        grid-template-columns: 1fr;
+        margin: 1rem;
+    }
+}
+
+/* invnentory text */
+/* Inventory Section Title */
+.inventory-showcase h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #007BFF; /* Matches your link hover color */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.inventory-showcase h2:hover {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+    cursor: default;
+    transition: all 0.3s ease;
 }
