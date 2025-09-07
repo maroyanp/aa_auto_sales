@@ -55,7 +55,7 @@
                     <span class="error">{{ error }}</span>
                 {% endfor %}
             </div>
-            <div class="form-group">
+            <div class="form-group submit-group">
                 {{ form.submit() }}
             </div>
         </form>
@@ -64,11 +64,36 @@
 
     <!-- this will be a search to see what car to delete -->
     <section class="del-car">
-
-
-
-
+        <h1>Delete Vehicles</h1>
+        {% if cars %}
+            <ul class="car-list">
+                {% for car in cars %}
+                    <li class="car-item">
+                        <div class="car-info">
+                            <strong>{{ car.make }} {{ car.model }} ({{ car.year }})</strong><br>
+                            <img src="{{ url_for('static', filename='uploads/' ~ car.image_filename) }}" 
+                                alt="{{ car.make }} {{ car.model }}" width="120">
+                        </div>
+                        <form method="POST" action="{{ url_for('addInventory') }}" class="delete-form">
+                            {{ form.hidden_tag() }}  <!-- for CSRF -->
+                            <input type="hidden" name="delete_id" value="{{ car.id }}">
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No vehicles available at the moment.</p>
+        {% endif %}
     </section>
+
+    <section class="logout">
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    </section>
+
+
 
 
 
