@@ -1,7 +1,7 @@
 
 from flask import Flask, jsonify, request, redirect, url_for, flash, Response
 from flask import render_template
-from forms import ContactUsForum, VehicleForm, LoginForm
+from forms import ContactUsForum, VehicleForm, LoginForm, SortVheiclesForm
 from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
@@ -54,14 +54,32 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    cars = Vehicle.query.limit(5).all()  # Display only 5 cars on the homepage
+    return render_template('index.html', cars=cars)
 
 @app.route('/inventory')
 def inventory():
-    cars = Vehicle.query.all()
-    for car in cars:
-        print(f"this is IN CAR {car}")
-    return render_template('inventory.html', cars = cars)
+    form = SortVheiclesForm(request.args)
+    query = Vehicle.query
+
+    if form.validate():
+        sort_option = form.sort_by.data
+        if sort_option == 'price_asc':
+            query = query.order_by(Vehicle.price.asc())
+        elif sort_option == 'price_dec':
+            query = query.order_by(Vehicle.price.desc())
+        elif sort_option == 'year_asc':
+            query = query.order_by(Vehicle.year.asc())
+        elif sort_option == 'year_dec':
+            query = query.order_by(Vehicle.year.desc())
+        elif sort_option == 'km_asc':
+            query = query.order_by(Vehicle.kilometers.asc())
+        elif sort_option == 'km_dec':
+            query = query.order_by(Vehicle.kilometers.desc())
+        
+    cars = query.all()
+    
+    return render_template('inventory.html', cars = cars, form=form)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -112,12 +130,13 @@ def admin():
 @login_required
 def addInventory():
     form = VehicleForm(csrf_enabled=False)
+    cars = Vehicle.query.all()
 
-    if form.validate_on_submit():
+    # Handle adding
+    if form.validate_on_submit() and 'submit' in request.form:
         image_file = form.image.data
         filename = secure_filename(image_file.filename)
 
-        # Save image to disk
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         image_file.save(image_path)
 
@@ -131,11 +150,34 @@ def addInventory():
         )
         db.session.add(car)
         db.session.commit()
-
         flash("Vehicle added successfully!", "success")
         return redirect(url_for('addInventory'))
 
-    return render_template('addInventory.html', form=form)
+    # Handle deletion
+    if request.method == 'POST' and 'delete_id' in request.form:
+        delete_id = request.form['delete_id']
+        car_to_delete = Vehicle.query.get(delete_id)
+        if car_to_delete:
+            #delete image file from disk
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], car_to_delete.image_filename)
+            if os.path.exists(image_path):
+                os.remove(image_path)
+
+            db.session.delete(car_to_delete)
+            db.session.commit()
+            flash("Vehicle deleted successfully!", "info")
+        else:
+            flash("Vehicle not found.", "error")
+        return redirect(url_for('addInventory'))
+
+    return render_template('addInventory.html', form=form, cars=cars)
+
+@app.route('/logout', methods=['POST'])
+@login_required
+def logout():
+    logout_user()
+    flash("Logged out successfully!", "info")
+    return redirect(url_for('index'))
 
 
 @app.route('/vehicle_image/<int:vehicle_id>')
