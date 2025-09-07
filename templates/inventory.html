@@ -4,12 +4,18 @@
 {% block title %}Inventory | A & A Auto Sales{% endblock %}
 
 {% block content %}
-    <h1>Welcome to A & A Auto Sales</h1>
-    <p>We offer quality vehicles at unbeatable prices.</p>
+    <section class="inventory-intro">
+        <h2>Our Inventory</h2>
+        
+        <form method="get" class="inventory-filter-form">
+            {{ form.hidden_tag() }}
+            {{ form.sort_by.label }} {{ form.sort_by() }}
+            {{ form.submit() }}
+        </form>
+    </section>
 
 
     <section class="inventory-showcase">
-        <h2>Our Inventory</h2>
         <div class="inventory-grid">
             {% for car in cars %}
             <div class="vehicle-card">
