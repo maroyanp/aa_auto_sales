@@ -1008,3 +1008,291 @@ admin sign in page
     background-color: #c82333;
 }
 
+/* ================================
+   Modern Look Overrides
+================================ */
+
+/* Global font + background */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar modern */
+.navbar {
+    background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
+    padding: 1rem 3rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.nav-links a {
+    color: #ddd;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.nav-links a:hover {
+    color: #1a73e8;
+    transform: translateY(-2px);
+}
+
+/* Hero section modern */
+.video-text {
+    background: rgba(0,0,0,0.5);
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+}
+
+/* Quick Links */
+.quick-link {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.quick-link:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    color: #1a73e8;
+}
+
+/* Vehicle cards */
+.vehicle-card {
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vehicle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Modern buttons */
+button, input[type="submit"] {
+    background: linear-gradient(135deg, #1a73e8, #155ab6);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(135deg, #155ab6, #1a73e8);
+    box-shadow: 0 6px 14px rgba(26, 115, 232, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   Modern Contact Us Styling
+================================ */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Info card */
+.contact-intro {
+    flex: 1 1 400px;
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.contact-intro h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #1a73e8;
+    font-weight: 700;
+}
+
+.contact-intro p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+.contact-info li {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #444;
+}
+.contact-info li strong {
+    color: #111;
+}
+
+/* Form card */
+.contact-form {
+    flex: 1 1 500px;
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a73e8;
+}
+
+/* Inputs */
+.contact-form .form-group {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #333;
+    font-size: 0.95rem;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1a73e8;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(26,115,232,0.2);
+    outline: none;
+}
+
+/* Button */
+.contact-form input[type="submit"],
+.contact-form button {
+    background: linear-gradient(135deg, #1a73e8, #155ab6);
+    color: white;
+    padding: 0.9rem 1.6rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+.contact-form input[type="submit"]:hover,
+.contact-form button:hover {
+    background: linear-gradient(135deg, #155ab6, #1a73e8);
+    box-shadow: 0 6px 14px rgba(26,115,232,0.3);
+    transform: translateY(-2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-intro, .contact-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+
+/* ================================
+   Modern Inventory Styling
+================================ */
+.inventory-section {
+    max-width: 1300px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Vehicle card */
+.vehicle-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.vehicle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+/* Vehicle image */
+.vehicle-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.vehicle-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Vehicle details */
+.vehicle-info {
+    padding: 1.2rem 1.5rem;
+    flex-grow: 1;
+}
+.vehicle-info h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: #1a1a1a;
+}
+.vehicle-info p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+.vehicle-info .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-top: 0.8rem;
+}
+
+/* Call-to-action */
+.vehicle-card .cta {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+.vehicle-card .cta a {
+    display: inline-block;
+    background: linear-gradient(135deg, #1a73e8, #155ab6);
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.vehicle-card .cta a:hover {
+    background: linear-gradient(135deg, #155ab6, #1a73e8);
+    box-shadow: 0 6px 14px rgba(26,115,232,0.3);
+    transform: translateY(-2px);
+}
