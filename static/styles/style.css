@@ -1,4 +1,3 @@
-/* Reset & base */
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +21,11 @@ body {
 .nav-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.nav-brand:hover {
+    color: #f39c12;
 }
 .nav-links {
     list-style: none;
@@ -52,58 +56,48 @@ footer {
     margin-top: 3rem;
 }
 
-
-/* ##############
-video hero section
-################*/
+/* ################
+   Video Hero Section
+################ */
 .video-hero {
     position: relative;
     width: 100%;
     height: 86vh;
     overflow: hidden;
 }
-
 .bg-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
 }
-
 .video-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
     text-align: center;
-    background: rgba(0, 0, 0, 0.4); /* Optional: dark overlay */
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 10px;
 }
-
 .video-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
-
 .video-text p {
     font-size: 1.5rem;
 }
-
 .spacer {
-    height: 40px; /* Adjust height as needed */
-    /* background-color: rgba(211, 211, 211, 0.4); Optional: for visibility */
+    height: 40px;
 }
 
-
-/* ##############
-quick links section
-################*/
+/* ################
+   Quick Links Section
+################ */
 .quick-links {
     display: flex;
     justify-content: space-between;
@@ -112,7 +106,6 @@ quick links section
     gap: 2rem;
     flex-wrap: wrap;
 }
-
 .quick-link {
     flex: 1;
     min-width: 200px;
@@ -123,7 +116,6 @@ quick links section
     cursor: pointer;
     transition: transform 0.2s ease;
 }
-
 .quick-link img {
     width: 100%;
     height: 180px;
@@ -132,43 +124,37 @@ quick links section
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
     margin-bottom: 0.5rem;
 }
-
 .quick-link p {
     font-weight: 600;
     font-size: 1.1rem;
 }
-
 .quick-link:hover {
     transform: scale(1.05);
-    color: #007BFF; /* Optional: color change on hover */
+    color: #007BFF;
 }
 
-/* ##############
-about us section 
-################*/
-
+/* ################
+   About Us Section
+################ */
 #about {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 3rem auto;
-    background-color: #fff; /* White background for contrast */
+    background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
-
 #about .about_us {
     display: flex;
     align-items: center;
     gap: 2.5rem;
-    flex-wrap: wrap; /* for responsiveness */
+    flex-wrap: wrap;
     justify-content: center;
 }
-
 #about .about-image {
     flex: 1 1 300px;
     max-width: 400px;
 }
-
 #about .about-image img {
     width: 100%;
     border-radius: 12px;
@@ -176,19 +162,15 @@ about us section
     object-fit: cover;
     height: auto;
 }
-
 #about .about-text {
     flex: 1 1 400px;
     max-width: 600px;
 }
-
 .about-text h1 {
     text-align: left;
     margin-bottom: 1rem;
     padding-bottom: 20px;
-  
 }
-
 #about .about-text li {
     text-align: left;
     font-size: 1.1rem;
@@ -199,7 +181,6 @@ about us section
     margin: 0;
     text-align: center;
 }
-
 .about-image figcaption {
     margin-top: 0.5rem;
     font-size: 0.95rem;
@@ -207,74 +188,146 @@ about us section
     font-style: italic;
 }
 
-
-/* ##############
-Inventory slideshow section
-################*/
+/* #########################
+   Inventory Slideshow Section
+######################### */
 .inventory-carousel {
     text-align: center;
     padding: 3rem 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    margin: 3rem auto;
+    max-width: 1200px;
 }
-
+.inventory-carousel h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #007BFF;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 .carousel-wrapper {
     position: relative;
-    max-width: 1000px;
+    width: 960px;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 12px;
+    padding-bottom: 1rem;
 }
-
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    gap: 1rem;
+    transition: transform 0.4s ease;
+    will-change: transform;
+    width: max-content;
 }
-
-.carousel-track a {
-    flex: 0 0 33.3333%; /* 3 images per view */
-    padding: 0 0.5rem;
-    box-sizing: border-box;
+.carousel-item {
+    flex: 0 0 300px;
+    cursor: pointer;
 }
-
-.carousel-track img {
+.carousel-item:hover {
+    transform: scale(1.03);
+}
+.carousel-item img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    height: 200px;
     object-fit: cover;
 }
+.carousel-item p {
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #333;
+    margin: 0;
+}
 
-/* Buttons */
+/* Carousel Buttons */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     color: white;
     border: none;
     font-size: 2rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
+    border-radius: 6px;
+    transition: background 0.3s ease;
 }
-
 .carousel-btn:hover {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
-
 .carousel-btn.prev {
-    left: 0;
+    left: 0.5rem;
 }
-
 .carousel-btn.next {
-    right: 0;
+    right: 0.5rem;
 }
 
-/* 
-#####################
-Contact form section
-#####################
-*/
-/* Contact Form Styling */
+/* Responsive for Carousel */
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        width: 100%;
+    }
+    .carousel-track {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .carousel-item {
+        flex: 0 0 90%;
+    }
+    .carousel-btn {
+        display: none;
+    }
+}
+
+.inventory-intro {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.inventory-intro h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #000000;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.inventory-intro a {
+  display: block;         /* Makes the link start on a new line */
+  margin-top: 0.5rem;     /* Small gap under the h2 */
+  font-size: 0.9rem;      /* Smaller font size */
+  color: #007BFF;         /* Same blue as your heading */
+  text-decoration: none;  /* Remove underline */
+  font-weight: 600;       /* Slightly bold */
+}
+
+.inventory-intro a:hover {
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
+.inventory-intro {
+    max-width: 900px;
+    margin: 2rem auto;
+    /* remove padding */
+    padding: 0;
+    text-align: center; /* make sure text aligns center */
+}
+
+/* ####################
+   Contact Form Section
+#################### */
 .contact-form {
     max-width: 600px;
     margin: 3rem auto;
@@ -283,25 +336,22 @@ Contact form section
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
-
 .contact-form h2 {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     text-align: center;
     color: #333;
 }
-
 .contact-form .form-group {
     margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
 }
-
 .contact-form label {
-    display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #444;
 }
-
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
@@ -313,7 +363,6 @@ Contact form section
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
 }
-
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
@@ -321,13 +370,11 @@ Contact form section
     outline: none;
     background-color: #fff;
 }
-
 .contact-form .error {
     color: red;
     font-size: 0.9rem;
     margin-top: 0.25rem;
 }
-
 .contact-form input[type="submit"],
 .contact-form button {
     background-color: #007BFF;
@@ -340,12 +387,10 @@ Contact form section
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .contact-form input[type="submit"]:hover,
 .contact-form button:hover {
     background-color: #0056b3;
 }
-
 /* 
 ######################
 Contact form Intro
@@ -504,7 +549,7 @@ Style for add inventory
 ############################
 */
 
-/* Admin page intro */
+
 .admin-intro {
     max-width: 900px;
     margin: 2rem auto 3rem;
@@ -528,13 +573,18 @@ Style for add inventory
 
 /* Add Car Section */
 .add-car {
-    max-width: 600px;
+    max-width: 900px; /* expanded for 2-column layout */
     background-color: #fff;
     margin: 0 auto 4rem;
     padding: 2.5rem 3rem;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
+
+.add-car form {
+    width: 100%;
+}
+
 
 .add-car h2 {
     font-size: 2.4rem;
@@ -545,9 +595,32 @@ Style for add inventory
 
 /* Form Styling */
 form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem; /* row gap, column gap */
+}
+
+/* Make the submit button full width under the inputs */
+.form-group.submit-group {
+    grid-column: 1 / -1; /* spans both columns */
+    display: flex;
+    justify-content: center;
+}
+
+/* keep the label and input stacked vertically inside each form-group */
+.form-group {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+}
+
+/* Responsive fallback for smaller screens */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+    .form-group.submit-group {
+        grid-column: auto;
+    }
 }
 
 .form-group {
@@ -564,6 +637,7 @@ form {
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="file"],
+.form-group input[type="password"],
 .form-group select,
 .form-group textarea {
     padding: 0.6rem 1rem;
@@ -574,6 +648,7 @@ form {
 }
 
 .form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
 .form-group input[type="number"]:focus,
 .form-group input[type="file"]:focus,
 .form-group select:focus,
@@ -582,6 +657,7 @@ form {
     outline: none;
     background-color: #fff;
 }
+
 
 .error {
     color: #e74c3c;
@@ -626,4 +702,215 @@ form {
 .del-car h1 {
     font-size: 2rem;
     color: #d9534f;
+}
+
+/* 
+############################
+Delete section in addInventory 
+############################
+*/
+.car-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.car-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.car-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.car-info img {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.delete-form {
+    margin: 0;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* 
+############################
+admin sign in page 
+############################
+*/
+
+.admin-login-forum {
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-login-forum h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.admin-login-forum .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.admin-login-forum label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #333;
+}
+
+.admin-login-forum input[type="text"],
+.admin-login-forum input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.admin-login-forum input[type="text"]:focus,
+.admin-login-forum input[type="password"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    background-color: #fff;
+}
+
+.admin-login-forum .error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.admin-login-forum input[type="submit"],
+.admin-login-forum button {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.admin-login-forum input[type="submit"]:hover,
+.admin-login-forum button:hover {
+    background-color: #0056b3;
+}
+
+/* ########### */
+/* admin intro */
+/* ############ */
+/* Wrapper for entire admin login section */
+.admin-login-wrapper {
+    max-width: 500px;
+    margin: 5rem auto;
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Tweak intro spacing */
+.admin-intro {
+    margin-bottom: 2rem;
+}
+
+.admin-intro h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: #007BFF;
+}
+
+.admin-intro p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Ensure form fits */
+.admin-login-forum {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+}
+
+/* Optional: Responsive fallback */
+@media (max-width: 600px) {
+    .admin-login-wrapper {
+        width: 90%;
+        padding: 2rem 1.5rem;
+    }
+}
+
+.admin-submit-button {
+    display: flex;
+    justify-content: left;
+    margin-top: 1.5rem;
+}
+.admin-logout-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.admin-logout-section form {
+    width: max-content; /* or max-content */
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* let button size to its content */
+    display: inline-block; /* makes it centerable inside text-align */
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
 }
