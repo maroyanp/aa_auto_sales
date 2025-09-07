@@ -542,6 +542,99 @@ Inventory page styling
     transition: all 0.3s ease;
 }
 
+/*
+############################
+Style in inventory for search and sort
+############################ 
+ */
+
+.inventory-intro {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    background: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inventory-intro h2 {
+    font-weight: 800;
+    font-size: 2.8rem;
+    color: #1a73e8;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+.inventory-intro h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    background: #1a73e8;
+    border-radius: 3px;
+    margin: 8px auto 0;
+}
+
+.inventory-filter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+}
+
+.inventory-filter-form label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #444;
+    user-select: none;
+}
+
+.inventory-filter-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    background: white url("data:image/svg+xml;charset=US-ASCII,%3Csvg fill='%23999' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 1rem center/16px 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inventory-filter-form select:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.4);
+    outline: none;
+}
+
+.inventory-filter-form input[type="submit"] {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 0.55rem 1.6rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inventory-filter-form input[type="submit"]:hover {
+    background: #155ab6;
+    box-shadow: 0 6px 12px rgba(21, 90, 182, 0.6);
+}
+
+
+
+
 
 /*
 ############################
@@ -914,3 +1007,4 @@ admin sign in page
 .logout-btn:hover {
     background-color: #c82333;
 }
+
