@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed, FileRequired
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo,  Length, Regexp
 # from models import Vehicle
 
@@ -33,3 +33,13 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     # remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
+
+class SortVheiclesForm(FlaskForm):
+    sort_by = SelectField('Sort By', choices=[('', '-- Select --'),
+                                            ('price_asc', 'Price (Low to High)'), 
+                                           ('price_dec', 'Price (High to Low)'),
+                                            ('year_asc', 'Year (Old to New)'),
+                                            ('year_dec', 'Year (New to Old)'),
+                                            ('km_asc', 'Kilometers (Low to High)'),
+                                            ('km_dec', 'Kilometers (High to Low)')])
+    submit = SubmitField('Sort')
